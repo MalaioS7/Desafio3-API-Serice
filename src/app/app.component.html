@@ -1,0 +1,27 @@
+<h2>Desafio 3 - Services & API</h2>
+<p>Com a API do ViaCEP</p>
+<ol>
+  <li>Peça para o usuário informar um CEP e retorne: Localidade, Bairro, Logradouro/Cidade e Estado do mesmo;</li><br>
+  <li>Use uma API para retonar a Latitude e Longitude com base na cidade do CEP informado;</li><br>
+  <li>Use outra API para retornar o Clima e Temperatura com base na cidade do CEP informado</li><br>
+</ol>
+
+<p><strong>INFORME O CEP:</strong></p>
+<input [(ngModel)]="cep" (keyup.enter)="consulta()">
+<button (click)="consulta()">Enviar</button>
+<div *ngIf="!error && dados && coordenadas">
+  <br>
+  <p><u>Localidade</u>: {{ dados.localidade }}</p>
+  <p><u>Bairro</u>: {{ dados.bairro }}</p>
+  <p><u>Logradouro</u>: {{ dados.logradouro }}</p>
+  <p><u>Estado</u>: {{ dados.estado }}</p>
+
+  <hr style="border-style: dotted; border-width: 1px">
+  <p><u>Latitude</u>:  {{ coordenadas.latitude }}</p>
+  <p><u>Longitude</u>: {{ coordenadas.longitude }}</p>
+
+  <hr style="border-style: dotted; border-width: 1px">
+  <p><u>Clima</u>: </p>
+  <p><u>Temperatura</u>: {{ time.temperature }} </p>
+</div>
+<p *ngIf="error"><em>Error 444!</em></p>
