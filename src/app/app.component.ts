@@ -27,7 +27,6 @@ export class AppComponent {
     );
   }
   popula_cep(res){
-
     if (!res.erro){
       this.error = false
       this.dados = {
@@ -69,6 +68,7 @@ export class AppComponent {
 
   }
 
+  // ELE VAI CONSULTAR AS INFORMAÇÕES DE TEMPERATURA
   tempo(coordenadas){
     this.CepServico.tempo(coordenadas).subscribe({
       next: this.popula_tempo.bind(this),
